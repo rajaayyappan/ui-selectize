@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel=stylesheet href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <link rel=stylesheet href="styles/selectize.css">
+
+  
+  </head>
+
+  <body ng-app="Sample" ng-controller="mainController">
+
+
+
+
+  <!--<select class="selectize-input" ng-model="myValue" >
+     <option ng-repeat="car in cars" value="{{car.id}}">{{car.model}}</option>
+  </select>-->
+
+   <select id ="select-car" ng-model='selected' selectize="{ labelField: 'model', valueField: 'id',options:cars,maxItems:2}" ></select>
+
+
+
+
+  <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+    <script src="scripts/selectize.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.js" type="text/javascript"></script>
+    <script src="scripts/angular-selectize.js"></script>
+  <script>
+
+      angular.module('Sample', ['angular-selectize']);
+
+      angular.module('Sample')
+              .controller('mainController', function($scope) {
+                  $scope.numbers = [{
+                      id: 1,
+                      name: "One"
+                  }, {
+                      id: 2,
+                      name: "Two"
+                  }, {
+                      id: 3,
+                      name: "Three"
+                  }];
+
+                  $scope.cars =  [
+                      {id: 'avenger', make: 'dodge', model: 'Avenger'}
+                      ,{id: 'caliber', make: 'dodge', model: 'Caliber'},
+                      {id: 'caravan-grand-passenger', make: 'dodge', model: 'Caravan Grand Passenger'},
+                      {id: 'challenger', make: 'dodge', model: 'Challenger'},
+                      {id: 'ram-1500', make: 'dodge', model: 'Ram 1500'},
+                      {id: 'viper', make: 'dodge', model: 'Viper'},
+                      {id: 'a3', make: 'audi', model: 'A3'},
+                      {id: 'a6', make: 'audi', model: 'A6'},
+                      {id: 'r8', make: 'audi', model: 'R8'},
+                      {id: 'rs-4', make: 'audi', model: 'RS 4'},
+                      {id: 's4', make: 'audi', model: 'S4'},
+                      {id: 's8', make: 'audi', model: 'S8'},
+                      {id: 'tt', make: 'audi', model: 'TT'},
+                      {id: 'avalanche', make: 'chevrolet', model: 'Avalanche'},
+                      {id: 'aveo', make: 'chevrolet', model: 'Aveo'},
+                      {id: 'cobalt', make: 'chevrolet', model: 'Cobalt'},
+                      {id: 'silverado', make: 'chevrolet', model: 'Silverado'},
+                      {id: 'suburban', make: 'chevrolet', model: 'Suburban'},
+                      {id: 'tahoe', make: 'chevrolet', model: 'Tahoe'},
+                      {id: 'trail-blazer', make: 'chevrolet', model: 'TrailBlazer'}
+                  ];
+
+                  $scope.groups =  [
+                      {id: 'dodge', name: 'Dodge'},
+                      {id: 'audi', name: 'Audi'},
+                      {id: 'chevrolet', name: 'Chevrolet'}
+
+                  ];
+                  $scope.contacts = [
+                      {email: 'nikola@tesla.com', first_name: 'Nikola', last_name: 'Tesla'},
+                      {email: 'brian@thirdroute.com', first_name: 'Brian', last_name: 'Reavis'},
+                      {email: 'someone@gmail.com'}
+                  ];
+
+              });
+  </script>
+  </body>
+</html>
